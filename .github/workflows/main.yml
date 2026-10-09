@@ -2,8 +2,6 @@ name: Actualizar Dashboard Diario
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 12 * * *'
 
 jobs:
   build-and-deploy:
@@ -11,8 +9,8 @@ jobs:
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
-    permissions:      # <--- AÑADIR ESTA SECCIÓN
-      contents: write # <--- PARA PERMITIR QUE EL ROBOT HAGA 'GIT PUSH'
+    permissions:
+      contents: write
 
     steps:
       - name: 1. Descargar el código del repositorio
